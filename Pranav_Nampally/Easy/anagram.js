@@ -8,7 +8,22 @@
 */
 
 function isAnagram(str1, str2) {
-
+  
+  if(str1.length != str2.length) {
+    console.log("Not Anagrams");
+    return false;
+  }
+  
+  let condition = JSON.stringify(str1.split("").sort()) === JSON.stringify(str2.split("").sort());
+  
+  if(condition) {
+    console.log("Anagrams!!!");
+    return true;
+  }
+  
+  console.log("Not Anagrams");
+  return false;
 }
+
 
 module.exports = isAnagram;
