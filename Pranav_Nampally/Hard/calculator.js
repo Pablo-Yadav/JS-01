@@ -19,28 +19,39 @@
 
 class Calculator {
   constructor(){
-    this.result = 0
+    this.result = 0;
   }
   addNumber(num){
-    this.result+=num
+    this.result+=num;
   }
   subNumber(num){
-    this.result-=num
+    this.result-=num;
   }
   mulNumber(num){
-    this.result*=num
+    this.result*=num;
   }
   divideNumber(num){
     if(num!=0){
-      this.result/=num
+      this.result/=num;
     }
     else{
-      console.error("Divide by Zero is not defined")
+      console.error("Divide by Zero is not defined - NaN");
     }
   }
-
   clear(){
     this.result=0
+  }
+  getResult(){
+    return this.result;
+  }
+  calculate(s) {
+    let ans = eval(s.replace(/\s+/g, ''));
+    if(ans) {
+      return ans;
+    }
+    else{
+      throw "Can't be computed as it's NaN";
+    }
   }
 }
 
