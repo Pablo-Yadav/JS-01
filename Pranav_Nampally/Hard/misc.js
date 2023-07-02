@@ -7,3 +7,8 @@
 // iter.next() // {value:2, done:false}
 // iter.next() // {value:3, done: false}
 // iter.next() // {value: undefined, done : false}
+
+function makeIterator(nums) {
+	let iterator = nums[Symbol.iterator]();
+  return iterator;
+}
